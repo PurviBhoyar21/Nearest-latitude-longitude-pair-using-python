@@ -26,16 +26,7 @@ userlat=float(input("Enter the latitude: "))
 userlon=float(input("Enter the longitude: "))
 
 from math import radians, cos, sin, asin, sqrt
-def dist(lat1, long1, lat2, long2):
 
-    lat1, long1, lat2, long2 = map(radians, [lat1, long1, lat2, long2])
-
-    dlon = long2 - long1 
-    dlat = lat2 - lat1 
-    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
-    c = 2 * asin(sqrt(a)) 
-    km = 6371* c
-    return km
 
 from math import radians, cos, sin, asin, sqrt 
 def haversine(lon1, lat1, lon2, lat2):
