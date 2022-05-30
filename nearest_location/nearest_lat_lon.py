@@ -17,15 +17,13 @@ data=pd.read_csv('/content/drive/MyDrive/out.csv')
 
 data.head()
 
-data.columns =['CC', 'address1', 'address2','unused','unused2','latitude','longitude'] 
-data.drop('unused',axis=1,inplace=True)  
+data.columns =['CC', 'address1', 'address2','unused','unused2','latitude','longitude']  #Naming the columns in the dataset
+data.drop('unused',axis=1,inplace=True)  #dropping unused/empty columns from the dataset
 data.drop('unused2',axis=1,inplace=True)
 
-userlat=float(input("Enter the latitude: "))
+userlat=float(input("Enter the latitude: "))   #user latitude
 
-userlon=float(input("Enter the longitude: "))
-
-from math import radians, cos, sin, asin, sqrt
+userlon=float(input("Enter the longitude: "))  #user longitude
 
 
 from math import radians, cos, sin, asin, sqrt 
