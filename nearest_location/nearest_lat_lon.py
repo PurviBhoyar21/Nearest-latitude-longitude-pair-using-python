@@ -25,7 +25,6 @@ userlat=float(input("Enter the latitude: "))   #user latitude
 
 userlon=float(input("Enter the longitude: "))  #user longitude
 
-
 from math import radians, cos, sin, asin, sqrt 
 def haversine(lon1, lat1, lon2, lat2):
   
@@ -36,7 +35,7 @@ def haversine(lon1, lat1, lon2, lat2):
     a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
     c = 2 * asin(sqrt(a)) 
   
-    km = 6371* c
+    km = 6371* c   # radius of earth = 6371 km
     return km
 
 data['distance'] = [haversine(data.longitude[i],data.latitude[i],userlon,userlat) for i in range(len(data))]
@@ -47,4 +46,6 @@ data.head()
 val=min(data['distance'])
 
 print("NEAREST LOCATION to",userlat ,"latitude and ",userlon,"longitude is/are :- \n") 
-print(data.loc[data['distance'] == val])
+print(data.loc[data['distance'] == val]) 
+
+
